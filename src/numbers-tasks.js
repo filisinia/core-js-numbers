@@ -255,10 +255,19 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
-}
+function getFibonacciNumber(index) {
+  let num1 = 0;
+  let num2 = 1;
 
+  if (index === 0) return 0;
+
+  for (let i = 2; i <= index; i += 1) {
+    const num3 = num1 + num2;
+    num1 = num2;
+    num2 = num3;
+  }
+  return num2;
+}
 /**
  * Returns the sum of all numbers from 1 to n.
  *
