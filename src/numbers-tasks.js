@@ -279,8 +279,14 @@ function getFibonacciNumber(index) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let result = 0;
+
+  for (let i = 0; i <= n; i += 1) {
+    result += i;
+  }
+
+  return result;
 }
 
 /**
@@ -294,8 +300,11 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  const numToArr = String(num).split('');
+  return numToArr.reduce(function getSumOfArr(sum, elem) {
+    return sum + Number(elem);
+  }, 0);
 }
 
 /**
@@ -309,10 +318,15 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let res = 0;
+  let deg = 1;
+  while (res < num) {
+    res = 2 ** deg;
+    deg += 1;
+  }
+  return res === num;
 }
-
 /**
  * Returns the sine of a number.
  *
